@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b1s4ckbpq2tgx"]
+
+[ext_resource type="Script" uid="uid://5kvg01xyvbhu" path="res://Scene/Objects/DoorButton.cs" id="1_fw3b6"]
+[ext_resource type="Texture2D" uid="uid://dmp3lip2qo8tt" path="res://addons/godot-prototype-texture/PNG/grid_1024x1024/grid_black_1024x1024.png" id="1_ippo6"]
+[ext_resource type="Texture2D" uid="uid://nogtne67bxwx" path="res://addons/godot-prototype-texture/PNG/grid_1024x1024/grid_red_1024x1024.png" id="2_n6ind"]
+[ext_resource type="Texture2D" uid="uid://caiim57aafbm3" path="res://addons/PNGs/F.png" id="4_en1ae"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fw3b6"]
+albedo_texture = ExtResource("1_ippo6")
+
+[sub_resource type="BoxMesh" id="BoxMesh_dh3yy"]
+size = Vector3(0.3, 1.25, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rpuef"]
+size = Vector3(0.3, 1.25, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_en1ae"]
+albedo_texture = ExtResource("2_n6ind")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dh3yy"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rpuef"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("4_en1ae")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_dh3yy"]
+material = SubResource("StandardMaterial3D_rpuef")
+size = Vector2(0.6, 0.6)
+
+[node name="DoorButton" type="StaticBody3D" unique_id=745756806 node_paths=PackedStringArray("_mesh", "button")]
+script = ExtResource("1_fw3b6")
+_mesh = NodePath("F")
+button = NodePath("MeshInstance3D2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=889946638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+material_override = SubResource("StandardMaterial3D_fw3b6")
+mesh = SubResource("BoxMesh_dh3yy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=358587252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+shape = SubResource("BoxShape3D_rpuef")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=998347699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7869853, 0)
+material_override = SubResource("StandardMaterial3D_en1ae")
+mesh = SubResource("CylinderMesh_dh3yy")
+
+[node name="F" type="MeshInstance3D" parent="." unique_id=1907048445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.75, 0)
+mesh = SubResource("QuadMesh_dh3yy")

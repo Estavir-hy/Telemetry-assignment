@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://rgrhusikx7mx"]
+
+[ext_resource type="Script" uid="uid://cu2h3ncrb4c1k" path="res://Scene/Objects/Receiver.cs" id="1_ji5co"]
+[ext_resource type="Texture2D" uid="uid://dmp3lip2qo8tt" path="res://addons/godot-prototype-texture/PNG/grid_1024x1024/grid_black_1024x1024.png" id="1_sl7tx"]
+[ext_resource type="Texture2D" uid="uid://db3h4b6lrl4bj" path="res://addons/godot-prototype-texture/PNG/grid_1024x1024/grid_orange_1024x1024.png" id="2_ji5co"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufvcq"]
+albedo_texture = ExtResource("1_sl7tx")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dh3yy"]
+top_radius = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_dh3yy"]
+size = Vector3(0.2, 2, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_dh3yy"]
+inner_radius = 0.293
+outer_radius = 0.536
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqwrn"]
+albedo_texture = ExtResource("2_ji5co")
+
+[sub_resource type="SphereMesh" id="SphereMesh_dh3yy"]
+radius = 0.25
+height = 0.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dh3yy"]
+size = Vector3(2, 2.5, 2)
+
+[node name="Receiver" type="Node3D" unique_id=1981979146]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Receiver" type="StaticBody3D" parent="." unique_id=318197951 groups=["receiver"]]
+script = ExtResource("1_ji5co")
+
+[node name="body" type="MeshInstance3D" parent="Receiver" unique_id=1816216118]
+transform = Transform3D(1, 0, 0, 0, -1, -8.742278e-08, 0, 8.742278e-08, -1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ufvcq")
+mesh = SubResource("CylinderMesh_dh3yy")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Receiver" unique_id=1637447667]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, -0.75, 0.75, 0)
+mesh = SubResource("BoxMesh_dh3yy")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Receiver" unique_id=1584105743]
+transform = Transform3D(-3.7855173e-08, 2.1855694e-08, 1, 0.5, 0.8660254, 0, -0.8660254, 0.5, -4.371139e-08, 0, 0.75, 0.75)
+mesh = SubResource("BoxMesh_dh3yy")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Receiver" unique_id=1146043602]
+transform = Transform3D(-0.8660254, 0.5, -8.742278e-08, 0.5, 0.8660254, 0, 7.5710346e-08, -4.371139e-08, -1, 0.75, 0.75, 0)
+mesh = SubResource("BoxMesh_dh3yy")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Receiver" unique_id=227148768]
+transform = Transform3D(1.1356552e-07, -6.556708e-08, -1, 0.5, 0.8660254, 0, 0.8660254, -0.5, 1.3113416e-07, 0, 0.75, -0.75)
+mesh = SubResource("BoxMesh_dh3yy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Receiver" unique_id=2131940905]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("TorusMesh_dh3yy")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Receiver" unique_id=19464183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+material_override = SubResource("StandardMaterial3D_gqwrn")
+mesh = SubResource("SphereMesh_dh3yy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Receiver" unique_id=825041239]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0.44286972, 0)
+shape = SubResource("BoxShape3D_dh3yy")

@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://bxmaqsriqmm3f"]
+
+[ext_resource type="Script" uid="uid://cptlxb4ohec6w" path="res://Scripts/Statue.cs" id="1_4oil3"]
+[ext_resource type="Texture2D" uid="uid://db3h4b6lrl4bj" path="res://addons/godot-prototype-texture/PNG/grid_1024x1024/grid_orange_1024x1024.png" id="1_6f4k6"]
+[ext_resource type="Texture2D" uid="uid://nogtne67bxwx" path="res://addons/godot-prototype-texture/PNG/grid_1024x1024/grid_red_1024x1024.png" id="1_6l24c"]
+[ext_resource type="Texture2D" uid="uid://dmp3lip2qo8tt" path="res://addons/godot-prototype-texture/PNG/grid_1024x1024/grid_black_1024x1024.png" id="2_4oil3"]
+[ext_resource type="Texture2D" uid="uid://caiim57aafbm3" path="res://addons/PNGs/F.png" id="5_1mu81"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1mu81"]
+albedo_texture = ExtResource("1_6f4k6")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dh3yy"]
+top_radius = 0.7
+bottom_radius = 0.7
+height = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i7wn3"]
+albedo_texture = ExtResource("2_4oil3")
+
+[sub_resource type="BoxMesh" id="BoxMesh_iid7o"]
+size = Vector3(1, 2.7563467, 0.86992186)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nxs01"]
+albedo_texture = ExtResource("1_6f4k6")
+
+[sub_resource type="BoxMesh" id="BoxMesh_dh3yy"]
+size = Vector3(1, 0.25, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qqvs1"]
+albedo_texture = ExtResource("1_6l24c")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_iid7o"]
+top_radius = 0.15
+bottom_radius = 0.15
+height = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wv6r8"]
+albedo_texture = ExtResource("1_6f4k6")
+
+[sub_resource type="PrismMesh" id="PrismMesh_dh3yy"]
+left_to_right = 0.0
+size = Vector3(0.4, 0.3, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dh3yy"]
+height = 3.0605469
+radius = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iid7o"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("5_1mu81")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_i7wn3"]
+material = SubResource("StandardMaterial3D_iid7o")
+size = Vector2(0.6, 0.6)
+
+[node name="Statue" type="AnimatableBody3D" unique_id=2071613118 node_paths=PackedStringArray("F", "ins")]
+script = ExtResource("1_4oil3")
+F = NodePath("F")
+ins = NodePath("Label")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1395154880]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.10758832)
+material_override = SubResource("StandardMaterial3D_1mu81")
+mesh = SubResource("CylinderMesh_dh3yy")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=5056004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5106901, -0.12375578)
+material_override = SubResource("StandardMaterial3D_i7wn3")
+mesh = SubResource("BoxMesh_iid7o")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1143211609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.198668, 0.506091)
+material_override = SubResource("StandardMaterial3D_nxs01")
+mesh = SubResource("BoxMesh_dh3yy")
+
+[node name="Light" type="MeshInstance3D" parent="." unique_id=1293732550]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.8779649, 0.2940661)
+material_override = SubResource("StandardMaterial3D_qqvs1")
+mesh = SubResource("CylinderMesh_iid7o")
+
+[node name="Muzzle" type="Marker3D" parent="Light" unique_id=1120105949]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0035517514, 0.091822594, -0.014061868)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=57752650]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.4729257, 0.50985074)
+material_override = SubResource("StandardMaterial3D_wv6r8")
+mesh = SubResource("PrismMesh_dh3yy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1006315575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3808594, 0)
+shape = SubResource("CylinderShape3D_dh3yy")
+
+[node name="F" type="MeshInstance3D" parent="." unique_id=871383299]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.75, 0)
+mesh = SubResource("QuadMesh_i7wn3")
+
+[node name="Label" type="Label" parent="." unique_id=1444884640]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Press Q/E to rotate the statue"
+horizontal_alignment = 1

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://desfpm0uw8a2r"]
+
+[ext_resource type="Texture2D" uid="uid://fv6tvdesg1cy" path="res://addons/godot-prototype-texture/PNG/grid_1024x1024/grid_blue_1024x1024.png" id="1_88geg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spwgk"]
+albedo_texture = ExtResource("1_88geg")
+
+[sub_resource type="BoxMesh" id="BoxMesh_dh3yy"]
+size = Vector3(5, 3, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pxfjs"]
+size = Vector3(5, 3, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nk31g"]
+albedo_texture = ExtResource("1_88geg")
+
+[node name="Doors" type="Node3D" unique_id=75631042]
+
+[node name="Door" type="StaticBody3D" parent="." unique_id=477287483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door" unique_id=437827635]
+material_override = SubResource("StandardMaterial3D_spwgk")
+mesh = SubResource("BoxMesh_dh3yy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door" unique_id=1468532387]
+shape = SubResource("BoxShape3D_pxfjs")
+
+[node name="Door2" type="StaticBody3D" parent="." unique_id=625063184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Door2" unique_id=2061158432]
+material_override = SubResource("StandardMaterial3D_nk31g")
+mesh = SubResource("BoxMesh_dh3yy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door2" unique_id=190534160]
+shape = SubResource("BoxShape3D_pxfjs")

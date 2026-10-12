@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cfcm2jv6edh1u"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_dh3yy"]
+left_to_right = 0.0
+size = Vector3(5, 2, 4)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7cyrp"]
+points = PackedVector3Array(-2.5, -1, -2, -2.5, 1, -2, 2.5, -1, -2, -2.5, -1, 2, -2.5, 1, 2, 2.5, -1, 2)
+
+[node name="Slide" type="Node3D" unique_id=761536277]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1674897179]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=294100766]
+mesh = SubResource("PrismMesh_dh3yy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=216462996]
+shape = SubResource("ConvexPolygonShape3D_7cyrp")

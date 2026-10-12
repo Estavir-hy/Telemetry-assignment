@@ -1,0 +1,502 @@
+[gd_scene format=3 uid="uid://dvlrwm48ooxyh"]
+
+[ext_resource type="PackedScene" uid="uid://dos5n5env2wmt" path="res://Scene/single_cam.tscn" id="1_7i3f0"]
+[ext_resource type="Script" uid="uid://dugdtmweo0ewp" path="res://Scene/World.cs" id="1_qr17u"]
+[ext_resource type="PackedScene" uid="uid://by5wf7slyy7qt" path="res://Scene/character.tscn" id="1_tvdu5"]
+[ext_resource type="PackedScene" uid="uid://rgrhusikx7mx" path="res://Scene/Objects/receiver.tscn" id="2_hsvvb"]
+[ext_resource type="Script" uid="uid://cwbbcwjfh6gpb" path="res://Scripts/Mech.cs" id="2_ufol4"]
+[ext_resource type="PackedScene" uid="uid://desfpm0uw8a2r" path="res://Scene/Objects/doors.tscn" id="2_xjv3w"]
+[ext_resource type="PackedScene" uid="uid://b7u18wknvjtva" path="res://Scene/Objects/jump.tscn" id="3_8j7uv"]
+[ext_resource type="PackedScene" uid="uid://cfcm2jv6edh1u" path="res://Scene/Objects/Slide.tscn" id="3_67imx"]
+[ext_resource type="Script" uid="uid://de56bbrdnoqjs" path="res://Scene/EndArea.cs" id="6_mi5vp"]
+[ext_resource type="PackedScene" uid="uid://bxmaqsriqmm3f" path="res://Scene/Objects/statue.tscn" id="6_ufol4"]
+[ext_resource type="Script" uid="uid://drnpi3wlvehyk" path="res://Scripts/BeamRibbon.cs" id="7_hsvvb"]
+[ext_resource type="PackedScene" uid="uid://b1s4ckbpq2tgx" path="res://Scene/Objects/door_button.tscn" id="11_yt3em"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhr6m"]
+albedo_color = Color(0.7411765, 0.8666667, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dh3yy"]
+material = SubResource("StandardMaterial3D_jhr6m")
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iid7o"]
+size = Vector3(50, 0.5, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dh3yy"]
+size = Vector3(90, 6, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eml1u"]
+size = Vector3(30, 5, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_67imx"]
+size = Vector3(40, 6, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jhr6m"]
+size = Vector3(40, 5, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_oek3s"]
+size = Vector3(10, 3, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xjv3w"]
+size = Vector3(10, 2, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tvdu5"]
+size = Vector3(30, 6, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_67imx"]
+size = Vector3(30, 5, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iid7o"]
+size = Vector3(6, 2, 16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oek3s"]
+size = Vector3(6, 2, 16)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4cp72"]
+size = Vector3(3, 0.3, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hsvvb"]
+size = Vector3(3, 0.3, 4)
+
+[sub_resource type="Animation" id="Animation_8j7uv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-17, 2, 0.25)]
+}
+
+[sub_resource type="Animation" id="Animation_qr17u"]
+resource_name = "plat_move"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-17, 2, 0.25), Vector3(-12.5, 2, 0.25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yt3em"]
+_data = {
+&"RESET": SubResource("Animation_8j7uv"),
+&"plat_move": SubResource("Animation_qr17u")
+}
+
+[sub_resource type="BoxMesh" id="BoxMesh_jhr6m"]
+size = Vector3(6, 0.3, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ufol4"]
+size = Vector3(6, 0.3, 4)
+
+[sub_resource type="Animation" id="Animation_ufol4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(18, 0.8831508, -7.4017134)]
+}
+
+[sub_resource type="Animation" id="Animation_yt3em"]
+resource_name = "slide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(18, 0.8831508, -7.4017134), Vector3(12, 0.8831508, -7.4017134)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mi5vp"]
+_data = {
+&"RESET": SubResource("Animation_ufol4"),
+&"slide": SubResource("Animation_yt3em")
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ycwro"]
+
+[sub_resource type="Sky" id="Sky_05f3l"]
+sky_material = SubResource("ProceduralSkyMaterial_ycwro")
+
+[sub_resource type="Environment" id="Environment_dh3yy"]
+background_mode = 2
+sky = SubResource("Sky_05f3l")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dh3yy"]
+size = Vector3(6.292053, 3.1252441, 4.6875)
+
+[sub_resource type="Animation" id="Animation_mi5vp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../World/Walls/Doors/Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.5, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../World/Walls/Doors/Door2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.5, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_y4flk"]
+resource_name = "open"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../World/Walls/Doors/Door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.5, 0, 0), Vector3(-5.25, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../World/Walls/Doors/Door2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.5, 0, 0), Vector3(5.25, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8a8h"]
+_data = {
+&"RESET": SubResource("Animation_mi5vp"),
+&"open": SubResource("Animation_y4flk")
+}
+
+[node name="Node3D" type="Node3D" unique_id=441429787]
+
+[node name="World" type="Node3D" parent="." unique_id=1848604044 node_paths=PackedStringArray("_anim", "cameraIns")]
+script = ExtResource("1_qr17u")
+_anim = NodePath("Jump/AnimationPlayer")
+cameraIns = NodePath("Label")
+
+[node name="Ground" type="StaticBody3D" parent="World" unique_id=1758929320]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Ground" unique_id=1814643735]
+mesh = SubResource("PlaneMesh_dh3yy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Ground" unique_id=1747435268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+shape = SubResource("BoxShape3D_iid7o")
+
+[node name="Walls" type="Node3D" parent="World" unique_id=1454023627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.75)
+
+[node name="Wall" type="StaticBody3D" parent="World/Walls" unique_id=669518331]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 36)
+
+[node name="Wall" type="MeshInstance3D" parent="World/Walls/Wall" unique_id=183260877]
+mesh = SubResource("BoxMesh_dh3yy")
+
+[node name="WallCollision" type="CollisionShape3D" parent="World/Walls/Wall" unique_id=324059256]
+shape = SubResource("BoxShape3D_eml1u")
+
+[node name="Wall4" type="StaticBody3D" parent="World/Walls" unique_id=1960860306]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.75, 3, -24)
+
+[node name="Wall" type="MeshInstance3D" parent="World/Walls/Wall4" unique_id=30897344]
+mesh = SubResource("BoxMesh_67imx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Walls/Wall4" unique_id=787534102]
+shape = SubResource("BoxShape3D_jhr6m")
+
+[node name="Wall5" type="StaticBody3D" parent="World/Walls" unique_id=1785482238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 3, -24)
+
+[node name="Wall" type="MeshInstance3D" parent="World/Walls/Wall5" unique_id=1272034414]
+mesh = SubResource("BoxMesh_67imx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Walls/Wall5" unique_id=1719068957]
+shape = SubResource("BoxShape3D_jhr6m")
+
+[node name="Wall6" type="StaticBody3D" parent="World/Walls" unique_id=1401270693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 4.5, -24)
+
+[node name="Wall" type="MeshInstance3D" parent="World/Walls/Wall6" unique_id=1849929865]
+mesh = SubResource("BoxMesh_oek3s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Walls/Wall6" unique_id=1725472340]
+shape = SubResource("BoxShape3D_xjv3w")
+
+[node name="Wall2" type="StaticBody3D" parent="World/Walls" unique_id=896056038]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 30, 3, 6)
+
+[node name="Wall" type="MeshInstance3D" parent="World/Walls/Wall2" unique_id=1389171420]
+mesh = SubResource("BoxMesh_tvdu5")
+
+[node name="WallCollision" type="CollisionShape3D" parent="World/Walls/Wall2" unique_id=582603302]
+shape = SubResource("BoxShape3D_67imx")
+
+[node name="Wall3" type="StaticBody3D" parent="World/Walls" unique_id=580417209]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -30.5, 3, 6)
+
+[node name="Wall" type="MeshInstance3D" parent="World/Walls/Wall3" unique_id=1048361677]
+mesh = SubResource("BoxMesh_tvdu5")
+
+[node name="WallCollision" type="CollisionShape3D" parent="World/Walls/Wall3" unique_id=330998796]
+shape = SubResource("BoxShape3D_67imx")
+
+[node name="Doors" parent="World/Walls" unique_id=75631042 instance=ExtResource("2_xjv3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055434108, 1.500001, -10.38028)
+
+[node name="Platforms" type="Node3D" parent="World" unique_id=1490721975]
+
+[node name="Plat" type="StaticBody3D" parent="World/Platforms" unique_id=1251116784]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Platforms/Plat" unique_id=965053006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.75, 1, 11.75)
+mesh = SubResource("BoxMesh_iid7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/Plat" unique_id=1286655609]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.75, 1, 11.75)
+shape = SubResource("BoxShape3D_oek3s")
+
+[node name="Plat3" type="StaticBody3D" parent="World/Platforms" unique_id=940494519]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, 2.25)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Platforms/Plat3" unique_id=2121638803]
+mesh = SubResource("BoxMesh_iid7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/Plat3" unique_id=3741274]
+shape = SubResource("BoxShape3D_oek3s")
+
+[node name="Plat2" type="StaticBody3D" parent="World/Platforms" unique_id=492817353]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.75)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Platforms/Plat2" unique_id=1049085361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.75, 1, 11.5)
+mesh = SubResource("BoxMesh_iid7o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/Plat2" unique_id=605638087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.75, 1, 11.75)
+shape = SubResource("BoxShape3D_oek3s")
+
+[node name="Mechanic" type="Node3D" parent="World" unique_id=2098374108]
+
+[node name="mech" type="StaticBody3D" parent="World/Mechanic" unique_id=1415789185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 2, 0.25)
+script = ExtResource("2_ufol4")
+AnimPlayerNode = "floatmech"
+AnimName = "plat_move"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Mechanic/mech" unique_id=1068252928]
+mesh = SubResource("BoxMesh_4cp72")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Mechanic/mech" unique_id=133085656]
+shape = SubResource("BoxShape3D_hsvvb")
+
+[node name="floatmech" type="AnimationPlayer" parent="World/Mechanic/mech" unique_id=1910098934]
+libraries/ = SubResource("AnimationLibrary_yt3em")
+
+[node name="mech2" type="StaticBody3D" parent="World/Mechanic" unique_id=1135112305]
+transform = Transform3D(1, 0, 0, 0, 0.5031778, 0.8641828, 0, -0.8641828, 0.5031778, 18, 0.8831508, -7.4017134)
+script = ExtResource("2_ufol4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="World/Mechanic/mech2" unique_id=1643190005]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0)
+mesh = SubResource("BoxMesh_jhr6m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Mechanic/mech2" unique_id=64019047]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0)
+shape = SubResource("BoxShape3D_ufol4")
+
+[node name="slide" type="AnimationPlayer" parent="World/Mechanic/mech2" unique_id=267316197]
+libraries/ = SubResource("AnimationLibrary_mi5vp")
+
+[node name="Receivers" type="Node3D" parent="World" unique_id=720969033]
+
+[node name="Receiver" parent="World/Receivers" unique_id=1981979146 instance=ExtResource("2_hsvvb")]
+transform = Transform3D(-1.3113416e-08, 0.29999998, 0, -0.29999998, -1.3113416e-08, 0, 0, 0, 0.29999998, -15.236292, 1.0500005, 0.3163705)
+
+[node name="Receiver" parent="World/Receivers/Receiver" index="0" unique_id=318197951 node_paths=PackedStringArray("mech")]
+mech = NodePath("../../../Mechanic/mech")
+
+[node name="Receiver2" parent="World/Receivers" unique_id=2096795913 instance=ExtResource("2_hsvvb")]
+transform = Transform3D(1.3113415e-08, -0.29999998, 2.6226832e-08, -0.29999998, -1.3113415e-08, 0, 1.1464111e-15, -2.6226832e-08, -0.29999998, 14.763708, 1.0500005, -11.43363)
+
+[node name="Receiver" parent="World/Receivers/Receiver2" index="0" unique_id=318197951 node_paths=PackedStringArray("mech")]
+mech = NodePath("../../../Mechanic/mech2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=1200751280]
+environment = SubResource("Environment_dh3yy")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World" unique_id=317711061]
+transform = Transform3D(0.8538941, 0.15998206, 0.49524808, -0.52044684, 0.26248163, 0.81255066, 0, -0.9515825, 0.30739364, 0, 0, 0)
+light_energy = 0.3
+shadow_enabled = true
+shadow_blur = 0.5
+
+[node name="Jump" parent="World" unique_id=1298568671 instance=ExtResource("3_8j7uv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.096214, 3, 6.967001)
+
+[node name="EndArea" type="Area3D" parent="World" unique_id=562371348 node_paths=PackedStringArray("_gameOverUI")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -19.75)
+collision_mask = 2
+script = ExtResource("6_mi5vp")
+_gameOverUI = NodePath("../../GameOverUI/Panel")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/EndArea" unique_id=642228460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -1.84375)
+shape = SubResource("BoxShape3D_dh3yy")
+
+[node name="Label" type="Label" parent="World" unique_id=950256645]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Press Q/E to rotate the camera"
+horizontal_alignment = 1
+
+[node name="SingleCam" parent="." unique_id=68414983 node_paths=PackedStringArray("_statue") instance=ExtResource("1_7i3f0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.25, 0)
+offset_v = 30.0
+offset_h = 30.0
+_statue = NodePath("../Statue")
+
+[node name="Character" parent="." unique_id=57197245 node_paths=PackedStringArray("camNode", "_statue", "jump") instance=ExtResource("1_tvdu5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.596695, 1, 5.155194)
+collision_layer = 2
+camNode = NodePath("../SingleCam/Camera3D")
+_statue = NodePath("../Statue")
+jump = NodePath("../World/Jump/Jump")
+
+[node name="Slide" parent="." unique_id=761536277 instance=ExtResource("3_67imx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.25, 1, 13.25)
+
+[node name="Statue" parent="." unique_id=2071613118 node_paths=PackedStringArray("Player") instance=ExtResource("6_ufol4")]
+transform = Transform3D(0, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 0, 13.236095, 0.15, 12.894442)
+Player = NodePath("../Character")
+
+[node name="Beam" type="Node3D" parent="Statue" unique_id=1480025228 node_paths=PackedStringArray("Muzzle", "Emitter")]
+script = ExtResource("7_hsvvb")
+Muzzle = NodePath("../Light/Muzzle")
+Emitter = NodePath("..")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Statue/Beam" unique_id=736185462]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, -7.1054274e-15, 0, -7.1054265e-15, 0.9999999, 0, 0, 0)
+light_color = Color(1, 1, 0.7764706, 1)
+light_energy = 16.0
+light_indirect_energy = 8.368
+light_volumetric_fog_energy = 5.947
+shadow_enabled = true
+spot_range = 100.0
+spot_angle = 4.0
+
+[node name="doorButton" parent="." unique_id=775322483 node_paths=PackedStringArray("_door", "player") instance=ExtResource("11_yt3em")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.813098, 2.5, -11.38529)
+_door = NodePath("AnimationPlayer")
+player = NodePath("../Character")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="doorButton" unique_id=1489512449]
+libraries/ = SubResource("AnimationLibrary_x8a8h")
+
+[node name="GameOverUI" type="CanvasLayer" parent="." unique_id=896543551]
+
+[node name="Panel" type="Panel" parent="GameOverUI" unique_id=1227061984]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameOverUI/Panel" unique_id=360841066]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.29803923)
+
+[node name="Label" type="Label" parent="GameOverUI/Panel" unique_id=922532433]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39800003
+anchor_top = 0.34100002
+anchor_right = 0.60700005
+anchor_bottom = 0.47700003
+offset_left = -0.4960327
+offset_top = 0.031982422
+offset_right = -0.2640381
+offset_bottom = -0.0960083
+theme_override_font_sizes/font_size = 64
+text = "you win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="GameOverUI/Panel" unique_id=1604778632]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.44000003
+anchor_top = 0.606
+anchor_right = 0.56
+anchor_bottom = 0.71900004
+offset_left = 0.1199646
+offset_top = 0.3119812
+offset_right = -0.11999512
+offset_bottom = 0.08798218
+grow_horizontal = 2
+grow_vertical = 0
+text = "Restart"
+
+[connection signal="body_entered" from="World/EndArea" to="World/EndArea" method="OnBodyEntered"]
+[connection signal="pressed" from="GameOverUI/Panel/Button" to="World/EndArea" method="OnRestartPressed"]
+
+[editable path="World/Walls/Doors"]
+[editable path="World/Receivers/Receiver"]
+[editable path="World/Receivers/Receiver2"]
+[editable path="World/Jump"]
+[editable path="SingleCam"]
+[editable path="Statue"]

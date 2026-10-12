@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://by5wf7slyy7qt"]
+
+[ext_resource type="Script" uid="uid://ues6lqevkiqx" path="res://Scripts/Character.cs" id="1_snjih"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dh3yy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iid7o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dh3yy"]
+size = Vector3(0.7, 0.3, 0.6)
+
+[node name="Character" type="CharacterBody3D" unique_id=57197245]
+script = ExtResource("1_snjih")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=366101516]
+mesh = SubResource("CapsuleMesh_dh3yy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=993517764]
+shape = SubResource("CapsuleShape3D_iid7o")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1027651834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.25)
+mesh = SubResource("BoxMesh_dh3yy")
