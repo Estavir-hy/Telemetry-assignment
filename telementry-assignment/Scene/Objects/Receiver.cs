@@ -13,5 +13,10 @@ public partial class Receiver : StaticBody3D
 		if(_powered == on) return;
 		_powered = on;
 		mech?.SetOpen(on);
+		//TelemetryManager.Instance?.LogEvent(TelemetryManager.ReceiverPowered, GlobalPosition, Name);
+		TelemetryManager.Instance?.LogEvent(
+        on ? TelemetryManager.ReceiverPowered : TelemetryManager.ReceiverUnpowered,
+        GlobalPosition
+    );
 	}
 }

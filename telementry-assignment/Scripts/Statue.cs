@@ -40,11 +40,16 @@ public partial class Statue : AnimatableBody3D
 			if(Player !=null && Input.IsActionJustPressed("interact_button"))
 			{
 				if(isGrabbed)
+				{
 					isGrabbed = false;
+					TelemetryManager.Instance?.LogEvent(TelemetryManager.ReleaseStatue, GlobalPosition);
+				}
+
 				else
 				{
 					isGrabbed = true;
 					_offset = statuePos - playerPos;
+					TelemetryManager.Instance?.LogEvent(TelemetryManager.GrabStatue, GlobalPosition);
 				}
 					
 			}

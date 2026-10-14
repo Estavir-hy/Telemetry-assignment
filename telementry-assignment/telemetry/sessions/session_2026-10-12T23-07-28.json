@@ -1,0 +1,16 @@
+{
+  "SessionId": "2026-10-12T23-07-28",
+  "SessionStartMs": 770,
+  "SampleInterval": 2,
+  "DeadZoneThreshold": 0.5,
+  "Samples": [
+    {
+      "RelativeTimeMs": 3,
+      "X": 2.596695,
+      "Y": 1,
+      "Z": 5.155194,
+      "RotY": 0
+    }
+  ],
+  "Events": []
+}

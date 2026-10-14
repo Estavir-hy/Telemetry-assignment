@@ -19,6 +19,9 @@ public partial class EndArea : Area3D
 			_triggered = true;
 			_gameOverUI.Visible = true;
 			Input.MouseMode = Input.MouseModeEnum.Visible;
+
+			TelemetryManager.Instance?.LogEvent(TelemetryManager.LevelComplete, GlobalPosition);
+			TelemetryManager.Instance?.EndSession();
 		}
 	}
 

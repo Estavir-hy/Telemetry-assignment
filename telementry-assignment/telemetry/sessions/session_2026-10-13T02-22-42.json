@@ -1,0 +1,37 @@
+{
+  "SessionId": "2026-10-13T02-22-42",
+  "SessionStartMs": 753,
+  "SampleInterval": 2,
+  "DeadZoneThreshold": 0.5,
+  "Samples": [
+    {
+      "RelativeTimeMs": 3,
+      "X": 2.596695,
+      "Y": 1,
+      "Z": 5.155194,
+      "RotY": 0
+    },
+    {
+      "RelativeTimeMs": 3892,
+      "X": 4.1616454,
+      "Y": 1,
+      "Z": -2.5356543,
+      "RotY": 2.2089736
+    },
+    {
+      "RelativeTimeMs": 5892,
+      "X": -2.3802903,
+      "Y": 1,
+      "Z": -0.4281391,
+      "RotY": -0.9555943
+    },
+    {
+      "RelativeTimeMs": 7893,
+      "X": -0.8833792,
+      "Y": 1,
+      "Z": 5.0755653,
+      "RotY": 0.58871686
+    }
+  ],
+  "Events": []
+}

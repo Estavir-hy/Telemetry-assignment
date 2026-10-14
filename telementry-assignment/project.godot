@@ -15,6 +15,10 @@ run/main_scene="uid://dvlrwm48ooxyh"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+TelemetryManager="*uid://duf48oqb86goh"
+
 [display]
 
 window/stretch/mode="canvas_items"

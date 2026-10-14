@@ -34,6 +34,7 @@ public partial class Jump : Area3D
 			_anim.Stop();
 			jumpActive = true;
 			_mesh.Visible = false;
+			TelemetryManager.Instance?.LogEvent(TelemetryManager.JumpBuff, GlobalPosition);
 
 		}
 	}

@@ -33,6 +33,7 @@ public partial class DoorButton : StaticBody3D
 				isPressed = true;
 				button.GlobalPosition = new Vector3(button.GlobalPosition.X,button.GlobalPosition.Y - 0.05f, button.GlobalPosition.Z);
 				_door.Play("open");
+				TelemetryManager.Instance?.LogEvent(TelemetryManager.DoorButton, GlobalPosition);
 			}
 
 		}

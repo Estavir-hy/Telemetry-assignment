@@ -8,6 +8,7 @@ public partial class World : Node3D
 	private float insTime = 5f;
 	public override void _Ready()
 	{
+		TelemetryManager.Instance?.BeginSession();
 		_anim.Play("rotate");
 	}
 

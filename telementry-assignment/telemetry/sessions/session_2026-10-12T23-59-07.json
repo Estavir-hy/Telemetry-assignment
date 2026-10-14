@@ -1,0 +1,328 @@
+{
+  "SessionId": "2026-10-12T23-59-07",
+  "SessionStartMs": 1086,
+  "SampleInterval": 2,
+  "DeadZoneThreshold": 0.5,
+  "Samples": [
+    {
+      "RelativeTimeMs": 3,
+      "X": 2.596695,
+      "Y": 1,
+      "Z": 5.155194,
+      "RotY": 0
+    },
+    {
+      "RelativeTimeMs": 3876,
+      "X": 4.7136474,
+      "Y": 1,
+      "Z": 8.482349,
+      "RotY": 0.609511
+    },
+    {
+      "RelativeTimeMs": 5876,
+      "X": 11.273043,
+      "Y": 1,
+      "Z": 11.748356,
+      "RotY": 0.091208965
+    },
+    {
+      "RelativeTimeMs": 7876,
+      "X": 5.217112,
+      "Y": 1,
+      "Z": 6.4586425,
+      "RotY": -3.114958
+    },
+    {
+      "RelativeTimeMs": 9876,
+      "X": 5.217112,
+      "Y": 1,
+      "Z": -2.2080276,
+      "RotY": -3.141592
+    },
+    {
+      "RelativeTimeMs": 11876,
+      "X": 5.217112,
+      "Y": 1,
+      "Z": -9.124696,
+      "RotY": -3.141592
+    },
+    {
+      "RelativeTimeMs": 15876,
+      "X": 9.992954,
+      "Y": 2.0058243,
+      "Z": -7.624159,
+      "RotY": 0.16120575
+    },
+    {
+      "RelativeTimeMs": 17877,
+      "X": 11.628792,
+      "Y": 3.0003996,
+      "Z": 1.2936115,
+      "RotY": 0.013480598
+    },
+    {
+      "RelativeTimeMs": 19876,
+      "X": 10.377857,
+      "Y": 3.0003996,
+      "Z": 1.2745353,
+      "RotY": -2.5709605
+    },
+    {
+      "RelativeTimeMs": 21877,
+      "X": 5.5253315,
+      "Y": 1.0009156,
+      "Z": -5.911981,
+      "RotY": -1.3436519
+    },
+    {
+      "RelativeTimeMs": 23877,
+      "X": -0.24817137,
+      "Y": 1.0009156,
+      "Z": 2.2529798,
+      "RotY": -0.61548215
+    },
+    {
+      "RelativeTimeMs": 25877,
+      "X": -1.0462838,
+      "Y": 1.0009156,
+      "Z": 2.321021,
+      "RotY": -1.2376988
+    },
+    {
+      "RelativeTimeMs": 29884,
+      "X": -1.0462838,
+      "Y": 1.0009156,
+      "Z": 3.2376869,
+      "RotY": -0.43155888
+    },
+    {
+      "RelativeTimeMs": 31884,
+      "X": -4.881456,
+      "Y": 1.09203,
+      "Z": 11.999497,
+      "RotY": -0.6041961
+    },
+    {
+      "RelativeTimeMs": 33884,
+      "X": -11.222671,
+      "Y": 3.0000758,
+      "Z": 8.403486,
+      "RotY": -3.069812
+    },
+    {
+      "RelativeTimeMs": 35884,
+      "X": -12.040589,
+      "Y": 3.6747131,
+      "Z": -1.3369949,
+      "RotY": -3.1415827
+    },
+    {
+      "RelativeTimeMs": 37885,
+      "X": -12.040589,
+      "Y": 3.0008776,
+      "Z": -10.086993,
+      "RotY": -3.1415918
+    },
+    {
+      "RelativeTimeMs": 39884,
+      "X": -3.553083,
+      "Y": 1.0009285,
+      "Z": -11.08027,
+      "RotY": 2.046272
+    }
+  ],
+  "Events": [
+    {
+      "RelativeTimeMs": 5626,
+      "Type": "grab_statue",
+      "X": 13.236095,
+      "Y": 0.14999998,
+      "Z": 12.894442,
+      "Detail": ""
+    },
+    {
+      "RelativeTimeMs": 8997,
+      "Type": "receiver_powered",
+      "X": -15.236292,
+      "Y": 1.0500005,
+      "Z": 0.3163705,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 9023,
+      "Type": "receiver_powered",
+      "X": -15.236292,
+      "Y": 1.0500005,
+      "Z": 0.3163705,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 12709,
+      "Type": "receiver_powered",
+      "X": 14.763708,
+      "Y": 1.0500005,
+      "Z": -11.43363,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 12758,
+      "Type": "receiver_powered",
+      "X": 14.763708,
+      "Y": 1.0500005,
+      "Z": -11.43363,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 12772,
+      "Type": "receiver_powered",
+      "X": 14.763708,
+      "Y": 1.0500005,
+      "Z": -11.43363,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 13244,
+      "Type": "receiver_powered",
+      "X": 14.763708,
+      "Y": 1.0500005,
+      "Z": -11.43363,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 13806,
+      "Type": "receiver_powered",
+      "X": 14.763708,
+      "Y": 1.0500005,
+      "Z": -11.43363,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 14188,
+      "Type": "release_statue",
+      "X": 6.6801667,
+      "Y": 0.14999998,
+      "Z": -7.97861,
+      "Detail": ""
+    },
+    {
+      "RelativeTimeMs": 18710,
+      "Type": "jump_buff",
+      "X": 12.096214,
+      "Y": 3,
+      "Z": 6.967001,
+      "Detail": ""
+    },
+    {
+      "RelativeTimeMs": 21508,
+      "Type": "grab_statue",
+      "X": 6.6801667,
+      "Y": 0.14999998,
+      "Z": -7.97861,
+      "Detail": ""
+    },
+    {
+      "RelativeTimeMs": 21744,
+      "Type": "receiver_powered",
+      "X": 14.763708,
+      "Y": 1.0500005,
+      "Z": -11.43363,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 21828,
+      "Type": "receiver_powered",
+      "X": 14.763708,
+      "Y": 1.0500005,
+      "Z": -11.43363,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 22126,
+      "Type": "receiver_powered",
+      "X": 14.763708,
+      "Y": 1.0500005,
+      "Z": -11.43363,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 24258,
+      "Type": "release_statue",
+      "X": -1.23169,
+      "Y": 0.14999998,
+      "Z": 0.1183095,
+      "Detail": ""
+    },
+    {
+      "RelativeTimeMs": 25710,
+      "Type": "grab_statue",
+      "X": -1.23169,
+      "Y": 0.14999998,
+      "Z": 0.1183095,
+      "Detail": ""
+    },
+    {
+      "RelativeTimeMs": 26578,
+      "Type": "receiver_powered",
+      "X": 14.763708,
+      "Y": 1.0500005,
+      "Z": -11.43363,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 26592,
+      "Type": "receiver_powered",
+      "X": 14.763708,
+      "Y": 1.0500005,
+      "Z": -11.43363,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 28592,
+      "Type": "receiver_powered",
+      "X": -15.236292,
+      "Y": 1.0500005,
+      "Z": 0.3163705,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 28626,
+      "Type": "receiver_powered",
+      "X": -15.236292,
+      "Y": 1.0500005,
+      "Z": 0.3163705,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 29078,
+      "Type": "receiver_powered",
+      "X": -15.236292,
+      "Y": 1.0500005,
+      "Z": 0.3163705,
+      "Detail": "Receiver"
+    },
+    {
+      "RelativeTimeMs": 29571,
+      "Type": "release_statue",
+      "X": -1.23169,
+      "Y": 0.14999998,
+      "Z": 0.1183095,
+      "Detail": ""
+    },
+    {
+      "RelativeTimeMs": 37773,
+      "Type": "door_button",
+      "X": -12.813098,
+      "Y": 2.5,
+      "Z": -11.38529,
+      "Detail": ""
+    },
+    {
+      "RelativeTimeMs": 41836,
+      "Type": "level_complete",
+      "X": 0,
+      "Y": 0.25,
+      "Z": -19.75,
+      "Detail": ""
+    }
+  ]
+}
